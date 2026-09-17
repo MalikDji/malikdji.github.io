@@ -77,7 +77,7 @@
     const a = link("", href, "contact-link"); const text = element("span"); text.append(element("small", "", label), document.createTextNode(value));
     const arrow = element("span", "accent", "↗"); arrow.setAttribute("aria-hidden", "true"); a.append(text, arrow); return a;
   }));
-  const resumeURL = safeURL(profile.resume, true);
+  const resumeURL = safeURL(profile.resume === "./assets/cv-malik-djilali.pdf" ? "./cv-malik-djilali.pdf" : profile.resume, true);
   if (resumeURL) { const a = document.getElementById("resume"); a.hidden = false; a.href = resumeURL; a.setAttribute("download", ""); }
   const toggle = document.querySelector(".menu-toggle"); const navigation = document.getElementById("nav-links");
   const closeMenu = () => { toggle.setAttribute("aria-expanded", "false"); navigation.classList.remove("open"); };
